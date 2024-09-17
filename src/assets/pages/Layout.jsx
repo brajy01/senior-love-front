@@ -2,13 +2,14 @@ import { Outlet } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-// eslint-disable-next-line react/prop-types
-export default function Layout({ onLoginClick, onRegisterClick }) {
+
+export default function Layout() {
   return (
-    <div>
-      {/* Render the Header with modal handlers */}
-      <Header onLoginClick={onLoginClick} onRegisterClick={onRegisterClick} />
-      <Outlet />
+    <div className="flex flex-col min-h-screen">
+      <Header />
+      <main className="flex-grow">
+        <Outlet />
+      </main>
       <Footer />
     </div>
   );
