@@ -1,0 +1,40 @@
+.btn-header-lg {
+  @apply lg:bg-fuchsia-300 lg:rounded-full lg:py-1 lg:px-2 lg:shadow-md text-darkGrey;
+}
+
+.btn-register {
+  @apply bg-fuchsia-400 rounded-lg px-3 py-1 shadow-md text-[#f5f5f5];
+}
+
+.btn-fuchsia-100 {
+  @apply bg-fuchsia-100 rounded-lg px-3 py-1 border border-darkGrey shadow-md text-[#f5f5f5];
+}
+
+.btn-fuchsia-300 {
+  @apply bg-fuchsia-300 rounded-lg px-3 py-1 border border-darkGrey shadow-md text-[#f5f5f5];
+}
+
+.btn-fuchsia-400 {
+  @apply bg-fuchsia-400 rounded-lg px-3 py-1 border border-darkGrey shadow-md text-[#f5f5f5];
+}
+
+.btn-fuchsia-600 {
+  @apply bg-fuchsia-600 rounded-lg px-3 py-1 border border-darkGrey shadow-md text-[#f5f5f5];
+}
+
+.icone {
+  @apply w-20 bg-fuchsia-100 p-4 rounded-full overflow-visible;
+}
+
+.card-home {
+  @apply flex flex-col items-center my-10 text-center text-darkGrey m-5;
+}
+
+.input {
+  @apply p-2 m-1 rounded-lg shadow-md;
+}
+
+.article {
+  @apply flex flex-row m-4 rounded-2xl bg-white shadow-lg
+  lg:w-1/3;
+}
