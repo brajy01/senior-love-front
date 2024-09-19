@@ -11,7 +11,9 @@ export default function Homepage() {
   useEffect(() => {
     const fetchEventsData = async () => {
       try {
-        const response = await fetch("http://localhost:4000/events?limit=3");
+        const response = await fetch(
+          "https://senior-love-back.onrender.com/events?limit=3"
+        );
         const newEvents = await response.json();
         setEvents(newEvents);
       } catch (error) {
@@ -23,7 +25,7 @@ export default function Homepage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  }
+  };
 
   return (
     <>
@@ -46,7 +48,10 @@ export default function Homepage() {
             </h2>
 
             {/* Form */}
-            <form className="my-4 p-6 rounded-xl bg-gradient-to-b from-fuchsia-300 to-fuchsia-100" onSubmit={handleSubmit}>
+            <form
+              className="my-4 p-6 rounded-xl bg-gradient-to-b from-fuchsia-300 to-fuchsia-100"
+              onSubmit={handleSubmit}
+            >
               <select className="select select-bordered select-sm w-full max-w-xs my-2">
                 <option disabled selected>
                   Je recherche
@@ -180,7 +185,6 @@ export default function Homepage() {
         <li>
           <hr />
           <div className="timeline-middle">
-
             {isConnected ? (
               <Link to={"/my-profile"}>
                 <img
@@ -191,11 +195,13 @@ export default function Homepage() {
               </Link>
             ) : (
               <img
-                  className="w-16 mx-4 bg-fuchsia-200 p-3 rounded-full overflow-visible"
-                  src="icons/edit-profile.png"
-                  alt="Lien vers création de profil"
-                  onClick={() => document.getElementById("btn_connexion").showModal()}
-                />
+                className="w-16 mx-4 bg-fuchsia-200 p-3 rounded-full overflow-visible"
+                src="icons/edit-profile.png"
+                alt="Lien vers création de profil"
+                onClick={() =>
+                  document.getElementById("btn_connexion").showModal()
+                }
+              />
             )}
           </div>
           <div className="timeline-end mb-10">
@@ -236,11 +242,13 @@ export default function Homepage() {
               </Link>
             ) : (
               <img
-                  className="w-16 mx-4 bg-fuchsia-200 p-3 rounded-full overflow-visible"
-                  src="icons/chat.png"
-                  alt="Lien vers messagerie"
-                  onClick={() => document.getElementById("btn_connexion").showModal()}
-                />
+                className="w-16 mx-4 bg-fuchsia-200 p-3 rounded-full overflow-visible"
+                src="icons/chat.png"
+                alt="Lien vers messagerie"
+                onClick={() =>
+                  document.getElementById("btn_connexion").showModal()
+                }
+              />
             )}
           </div>
           <div className="timeline-end mb-10">
@@ -259,9 +267,10 @@ export default function Homepage() {
         </h2>
         <div className="flex flex-col justify-around p-4 lg:flex-wrap">
           {events.map((event) => (
-
-            <div key={event.id} className="card mt-10 lg:card-side bg-base-100 shadow-xl lg:w-3/4 lg:h-64 lg:mx-auto xl:w-1/2">
-
+            <div
+              key={event.id}
+              className="card mt-10 lg:card-side bg-base-100 shadow-xl lg:w-3/4 lg:h-64 lg:mx-auto xl:w-1/2"
+            >
               <CardEvent event={event} />
             </div>
           ))}
@@ -296,7 +305,6 @@ export default function Homepage() {
       <button
         className="btn block mx-auto my-8  text-white bg-fuchsia-400 hover:animate-bounce"
         onClick={() => document.getElementById("btn_connexion").showModal()}
-        
       >
         Nous rejoindre
       </button>
